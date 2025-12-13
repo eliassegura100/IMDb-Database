@@ -24,17 +24,18 @@
 
 4. Import into Neo4j
     
-      neo4j-admin database import full neo4j \
-        --overwrite-destination=true \
-        --id-type=string \
-        --nodes=Title="title_header.csv,titles.csv" \
-        --nodes=Person="person_header.csv,people.csv" \
-        --nodes=Genre="genre_header.csv,genres.csv" \
-        --relationships=ACTED_IN="acted_in_header.csv,acted_in.csv" \
-        --relationships=DIRECTED="directed_header.csv,directed.csv" \
-        --relationships=WROTE="wrote_header.csv,wrote.csv" \
-        --relationships=HAS_GENRE="title_genre_header.csv,title_genres.csv"
-    
+    ```console
+    neo4j-admin database import full neo4j \
+      --overwrite-destination=true \
+      --id-type=string \
+      --nodes=Title="title_header.csv,titles.csv" \
+      --nodes=Person="person_header.csv,people.csv" \
+      --nodes=Genre="genre_header.csv,genres.csv" \
+      --relationships=ACTED_IN="acted_in_header.csv,acted_in.csv" \
+      --relationships=DIRECTED="directed_header.csv,directed.csv" \
+      --relationships=WROTE="wrote_header.csv,wrote.csv" \
+      --relationships=HAS_GENRE="title_genre_header.csv,title_genres.csv"
+    ```
 
 5. Change your dir into the python folder
 
