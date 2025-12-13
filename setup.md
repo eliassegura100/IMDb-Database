@@ -108,17 +108,19 @@ The database is loaded using Neo4j’s bulk importer:
 ## Indexing
 Indexes:
 
-    CREATE INDEX title_primaryTitle_index IF NOT EXISTS
-    FOR (t:Title)
-    ON (t.primaryTitle);
+  
+  CREATE INDEX title_primaryTitle_index IF NOT EXISTS
+  FOR (t:Title)
+  ON (t.primaryTitle);
 
-    CREATE INDEX genre_name_index IF NOT EXISTS
-    FOR (g:Genre)
-    ON (g.name);
+  CREATE INDEX genre_name_index IF NOT EXISTS
+  FOR (g:Genre)
+  ON (g.name);
 
-    CREATE INDEX person_name_index IF NOT EXISTS
-    FOR (p:Person)
-    ON (p.primaryName);
+  CREATE INDEX person_name_index IF NOT EXISTS
+  FOR (p:Person)
+  ON (p.primaryName);
+  
 
 ## Performance Comparison (Before vs After Indexing)
 
