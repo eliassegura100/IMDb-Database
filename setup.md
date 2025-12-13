@@ -23,18 +23,19 @@
   python preprocess_roles.py
 
 4. Import into Neo4j
-    neo4j-admin database import full neo4j \
-      --overwrite-destination=true \
-      --id-type=string \
-      --nodes=Title="title_header.csv,titles.csv" \
-      --nodes=Person="person_header.csv,people.csv" \
-      --nodes=Genre="genre_header.csv,genres.csv" \
-      --relationships=ACTED_IN="acted_in_header.csv,acted_in.csv" \
-      --relationships=DIRECTED="directed_header.csv,directed.csv" \
-      --relationships=WROTE="wrote_header.csv,wrote.csv" \
-      --relationships=HAS_GENRE="title_genre_header.csv,title_genres.csv"
+      neo4j-admin database import full neo4j \
+        --overwrite-destination=true \
+        --id-type=string \
+        --nodes=Title="title_header.csv,titles.csv" \
+        --nodes=Person="person_header.csv,people.csv" \
+        --nodes=Genre="genre_header.csv,genres.csv" \
+        --relationships=ACTED_IN="acted_in_header.csv,acted_in.csv" \
+        --relationships=DIRECTED="directed_header.csv,directed.csv" \
+        --relationships=WROTE="wrote_header.csv,wrote.csv" \
+        --relationships=HAS_GENRE="title_genre_header.csv,title_genres.csv"
 
 5. Change your dir into the python folder
+
 6. Run this command in the terminal:
   - On Windows:
     python imdb_app.py
@@ -93,31 +94,31 @@ Each CSV has a matching header file defining Neo4j import semantics, for example
 ## Bulk Loader Command
 The database is loaded using Neo4j’s bulk importer:
 
-  .\neo4j-admin.bat database import full neo4j ^
-    --overwrite-destination=true ^
-    --id-type=string ^
-    --nodes=Title="title_header.csv,titles.csv" ^
-    --nodes=Person="person_header.csv,people.csv" ^
-    --nodes=Genre="genre_header.csv,genres.csv" ^
-    --relationships=ACTED_IN="acted_in_header.csv,acted_in.csv" ^
-    --relationships=DIRECTED="directed_header.csv,directed.csv" ^
-    --relationships=WROTE="wrote_header.csv,wrote.csv" ^
-    --relationships=HAS_GENRE="title_genre_header.csv,title_genres.csv"
+    .\neo4j-admin.bat database import full neo4j ^
+      --overwrite-destination=true ^
+      --id-type=string ^
+      --nodes=Title="title_header.csv,titles.csv" ^
+      --nodes=Person="person_header.csv,people.csv" ^
+      --nodes=Genre="genre_header.csv,genres.csv" ^
+      --relationships=ACTED_IN="acted_in_header.csv,acted_in.csv" ^
+      --relationships=DIRECTED="directed_header.csv,directed.csv" ^
+      --relationships=WROTE="wrote_header.csv,wrote.csv" ^
+      --relationships=HAS_GENRE="title_genre_header.csv,title_genres.csv"
 
 ## Indexing
 Indexes:
 
-  CREATE INDEX title_primaryTitle_index IF NOT EXISTS
-  FOR (t:Title)
-  ON (t.primaryTitle);
+    CREATE INDEX title_primaryTitle_index IF NOT EXISTS
+    FOR (t:Title)
+    ON (t.primaryTitle);
 
-  CREATE INDEX genre_name_index IF NOT EXISTS
-  FOR (g:Genre)
-  ON (g.name);
+    CREATE INDEX genre_name_index IF NOT EXISTS
+    FOR (g:Genre)
+    ON (g.name);
 
-  CREATE INDEX person_name_index IF NOT EXISTS
-  FOR (p:Person)
-  ON (p.primaryName);
+    CREATE INDEX person_name_index IF NOT EXISTS
+    FOR (p:Person)
+    ON (p.primaryName);
 
 ## Performance Comparison (Before vs After Indexing)
 
