@@ -1,8 +1,10 @@
 ## How To Run
 1. Start Neo4j
     - On Windows:
+
       `neo4j.bat console`
     - On Mac:
+    
       `neo4j console`
 
 2. Set Environment Variables
