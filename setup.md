@@ -4,7 +4,7 @@
 
       `neo4j.bat console`
     - On Mac:
-    
+
       `neo4j console`
 
 2. Set Environment Variables
@@ -47,10 +47,12 @@
 
 6. Run this command in the terminal:
   - On Windows:
-    python imdb_app.py
+
+    `python imdb_app.py`
 
   - On Mac:
-    python3 imdb_app.py
+
+    `python3 imdb_app.py`
 
 
 ## Schema Diagram
