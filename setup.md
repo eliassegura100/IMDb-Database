@@ -118,8 +118,7 @@ The database is loaded using Neo4j’s bulk importer:
 
 ## Indexing
 Indexes:
-
-  
+```console
   CREATE INDEX title_primaryTitle_index IF NOT EXISTS
   FOR (t:Title)
   ON (t.primaryTitle);
@@ -131,15 +130,18 @@ Indexes:
   CREATE INDEX person_name_index IF NOT EXISTS
   FOR (p:Person)
   ON (p.primaryName);
+```
   
 
 ## Performance Comparison (Before vs After Indexing)
 
 **Example Query**
 
+  ```console
   MATCH (t:Title)
   WHERE toLower(t.primaryTitle) CONTAINS "matrix"
   RETURN t.primaryTitle;
+  ```
 
 ### Before Index
 
