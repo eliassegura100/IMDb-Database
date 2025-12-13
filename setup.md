@@ -7,14 +7,18 @@
 
 2. Set Environment Variables
     - On Windows:
-      $env:DB_URL="bolt://127.0.0.1:7687"
-      $env:DB_USER="neo4j"
-      $env:DB_PASSWORD="YOUR_NEO4J_PASSWORD"
+    ```console
+    $env:DB_URL="bolt://127.0.0.1:7687"
+    $env:DB_USER="neo4j"
+    $env:DB_PASSWORD="YOUR_NEO4J_PASSWORD"
+    ```
     
     - On Mac:
-      export DB_URL="bolt://localhost:7687"
-      export DB_USER="neo4j"
-      export DB_PASSWORD="YOUR_NEO4J_PASSWORD"
+    ```console
+    export DB_URL="bolt://localhost:7687"
+    export DB_USER="neo4j"
+    export DB_PASSWORD="YOUR_NEO4J_PASSWORD"
+    ```
 
 3. Run preprocessing scripts
   python preprocess_titles.py
