@@ -48,7 +48,7 @@
 The logical schema for the IMDb graph database is shown below:
 
 Schema:
-
+<img width="1827" height="437" alt="image" src="https://github.com/user-attachments/assets/17f40f07-fb11-4e69-9a0b-25ecb29ab939" />
 
 ## Core Node Labels
 
